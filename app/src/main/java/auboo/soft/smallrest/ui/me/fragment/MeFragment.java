@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import auboo.soft.smallrest.R;
+import auboo.soft.smallrest.ui.me.activity.SettingActivity;
 
 /**
  * 我的
@@ -20,6 +21,10 @@ public class MeFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_me, container, false);
+        View view = inflater.inflate(R.layout.fragment_me, container, false);
+        view.setOnClickListener(v -> {
+            SettingActivity.start(getActivity());
+        });
+        return view;
     }
 }

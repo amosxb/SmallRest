@@ -41,6 +41,6 @@ ext {
 
             rxlifecycle             : "com.trello:rxlifecycle:1.0",
             rxlifecycle_components  : "com.trello:rxlifecycle-components:1.0",
-            statusbarutil     : "com.jaeger.statusbarutil:library:1.4.0",
+            statusbarutil           : "com.jaeger.statusbarutil:library:1.4.0",
     ]
 }
