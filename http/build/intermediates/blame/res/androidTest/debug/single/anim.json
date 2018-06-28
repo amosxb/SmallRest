@@ -1,0 +1,50 @@
+[
+    {
+        "merged": "D:\\otherProject\\SmallRest\\http\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\abc_slide_in_bottom.xml",
+        "source": "C:\\Users\\xiaobin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\1d2544894ddf8002a42d3426fea15203\\res\\anim\\abc_slide_in_bottom.xml"
+    },
+    {
+        "merged": "D:\\otherProject\\SmallRest\\http\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\abc_tooltip_exit.xml",
+        "source": "C:\\Users\\xiaobin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\1d2544894ddf8002a42d3426fea15203\\res\\anim\\abc_tooltip_exit.xml"
+    },
+    {
+        "merged": "D:\\otherProject\\SmallRest\\http\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\abc_slide_in_top.xml",
+        "source": "C:\\Users\\xiaobin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\1d2544894ddf8002a42d3426fea15203\\res\\anim\\abc_slide_in_top.xml"
+    },
+    {
+        "merged": "D:\\otherProject\\SmallRest\\http\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\abc_slide_out_bottom.xml",
+        "source": "C:\\Users\\xiaobin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\1d2544894ddf8002a42d3426fea15203\\res\\anim\\abc_slide_out_bottom.xml"
+    },
+    {
+        "merged": "D:\\otherProject\\SmallRest\\http\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\abc_grow_fade_in_from_bottom.xml",
+        "source": "C:\\Users\\xiaobin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\1d2544894ddf8002a42d3426fea15203\\res\\anim\\abc_grow_fade_in_from_bottom.xml"
+    },
+    {
+        "merged": "D:\\otherProject\\SmallRest\\http\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\abc_popup_exit.xml",
+        "source": "C:\\Users\\xiaobin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\1d2544894ddf8002a42d3426fea15203\\res\\anim\\abc_popup_exit.xml"
+    },
+    {
+        "merged": "D:\\otherProject\\SmallRest\\http\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\abc_shrink_fade_out_from_bottom.xml",
+        "source": "C:\\Users\\xiaobin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\1d2544894ddf8002a42d3426fea15203\\res\\anim\\abc_shrink_fade_out_from_bottom.xml"
+    },
+    {
+        "merged": "D:\\otherProject\\SmallRest\\http\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\abc_tooltip_enter.xml",
+        "source": "C:\\Users\\xiaobin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\1d2544894ddf8002a42d3426fea15203\\res\\anim\\abc_tooltip_enter.xml"
+    },
+    {
+        "merged": "D:\\otherProject\\SmallRest\\http\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\abc_fade_out.xml",
+        "source": "C:\\Users\\xiaobin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\1d2544894ddf8002a42d3426fea15203\\res\\anim\\abc_fade_out.xml"
+    },
+    {
+        "merged": "D:\\otherProject\\SmallRest\\http\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\abc_slide_out_top.xml",
+        "source": "C:\\Users\\xiaobin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\1d2544894ddf8002a42d3426fea15203\\res\\anim\\abc_slide_out_top.xml"
+    },
+    {
+        "merged": "D:\\otherProject\\SmallRest\\http\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\abc_fade_in.xml",
+        "source": "C:\\Users\\xiaobin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\1d2544894ddf8002a42d3426fea15203\\res\\anim\\abc_fade_in.xml"
+    },
+    {
+        "merged": "D:\\otherProject\\SmallRest\\http\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\abc_popup_enter.xml",
+        "source": "C:\\Users\\xiaobin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\1d2544894ddf8002a42d3426fea15203\\res\\anim\\abc_popup_enter.xml"
+    }
+]

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--common-->
+    <dimen name="tool_bar_common_height">44dp</dimen>
+    <dimen name="tool_bar_title_text_size">18sp</dimen>
+</resources>

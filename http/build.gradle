@@ -1,0 +1,43 @@
+apply plugin: 'com.android.library'
+
+def configInfo = rootProject.ext.android
+def dependenciesLib = rootProject.ext.dependencies
+
+android {
+    compileSdkVersion configInfo.compileSdkVersion
+    buildToolsVersion configInfo.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion configInfo.minSdkVersion
+        targetSdkVersion configInfo.targetSdkVersion
+        versionCode configInfo.versionCode
+        versionName configInfo.versionName
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation files('libs/commons-lang-2.6.jar')
+
+    api dependenciesLib.jnit
+    api dependenciesLib.supportV7
+
+    // 网络请求
+    api dependenciesLib.gson
+    api dependenciesLib.retrofit2
+    api dependenciesLib.retrofit2_converter_gson
+    api dependenciesLib.okhttp
+    api dependenciesLib.logging
+    api dependenciesLib.okio
+    api dependenciesLib.rxandroid
+    api dependenciesLib.rxjava
+}

@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">SmallRest</string>
+
+    <!--common-->
+    <string name="loading_error">有点小问题，点击刷新一下吧~</string>
+    <string name="loading_text">加载中...</string>
+
+    <!--笑话大全-->
+    <string name="joke_tool_bar_title">笑话大全</string>
+</resources>

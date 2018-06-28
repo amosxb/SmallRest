@@ -1,0 +1,56 @@
+apply plugin: 'com.android.application'
+
+def configInfo = rootProject.ext.android
+def dependenciesLib = rootProject.ext.dependencies
+
+android {
+    compileSdkVersion configInfo.compileSdkVersion
+    buildToolsVersion configInfo.buildToolsVersion
+
+    defaultConfig {
+        applicationId "auboo.soft.smallrest"
+        minSdkVersion configInfo.minSdkVersion
+        targetSdkVersion configInfo.targetSdkVersion
+        versionCode configInfo.versionCode
+        versionName configInfo.versionName
+        //1.设置混合DEX
+        multiDexEnabled true
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    dataBinding {
+        enabled = true
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestImplementation dependenciesLib.test
+    androidTestImplementation dependenciesLib.testespresso
+    api dependenciesLib.jnit
+    api dependenciesLib.supportV7
+    api dependenciesLib.design
+    api dependenciesLib.recyclerView
+    api dependenciesLib.cardView
+    api dependenciesLib.constraint
+    api dependenciesLib.multidex
+    //下拉刷新
+    api dependenciesLib.tkrefreshlayout
+    //列表多布局
+    api dependenciesLib.multitype
+    //rxLifecycle
+    api dependenciesLib.rxlifecycle
+    api dependenciesLib.rxlifecycle_components
+    //statusBarUtil
+    api dependenciesLib.statusbarutil
+}
