@@ -4,9 +4,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.content.ContextCompat;
 
-import auboo.soft.smallrest.base.BaseActivity;
+import auboo.soft.smallrest.base.BaseCommonActivity;
 import auboo.soft.smallrest.databinding.ActivityJokeBinding;
 
 /**
@@ -14,7 +13,7 @@ import auboo.soft.smallrest.databinding.ActivityJokeBinding;
  * Created by amos on 2018/6/28.
  */
 
-public class JokeActivity extends BaseActivity<ActivityJokeBinding> {
+public class JokeActivity extends BaseCommonActivity<ActivityJokeBinding> {
 
     public static void start(Context context) {
         context.startActivity(new Intent(context, JokeActivity.class));

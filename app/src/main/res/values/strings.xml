@@ -5,6 +5,12 @@
     <string name="loading_error">有点小问题，点击刷新一下吧~</string>
     <string name="loading_text">加载中...</string>
 
+    <!--main-->
+    <string name="main_find">发现</string>
+    <string name="main_store">游戏库</string>
+    <string name="main_bbs">社区</string>
+    <string name="main_me">我</string>
+
     <!--笑话大全-->
     <string name="joke_tool_bar_title">笑话大全</string>
 </resources>

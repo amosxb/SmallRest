@@ -27,7 +27,7 @@ import auboo.soft.smallrest.databinding.ActivityBaseBinding;
  * Created by amos on 2018/6/28.
  */
 
-public abstract class BaseActivity<SV extends ViewDataBinding> extends RxAppCompatActivity {
+public abstract class BaseCommonActivity<SV extends ViewDataBinding> extends RxAppCompatActivity {
 
     private SV bindingView;
     private ActivityBaseBinding mBaseBinding;

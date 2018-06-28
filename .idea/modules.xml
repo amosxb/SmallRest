@@ -3,8 +3,11 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/SmallRest.iml" filepath="$PROJECT_DIR$/SmallRest.iml" />
+      <module fileurl="file://D:\otherProject\SmallRest\SmallRest.iml" filepath="D:\otherProject\SmallRest\SmallRest.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://D:\otherProject\SmallRest\app\app.iml" filepath="D:\otherProject\SmallRest\app\app.iml" />
       <module fileurl="file://$PROJECT_DIR$/http/http.iml" filepath="$PROJECT_DIR$/http/http.iml" />
+      <module fileurl="file://D:\otherProject\SmallRest\http\http.iml" filepath="D:\otherProject\SmallRest\http\http.iml" />
     </modules>
   </component>
 </project>

@@ -2,117 +2,145 @@ package auboo.soft.smallrest;
 
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.util.Log;
-import android.widget.Toast;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 
-import com.lcodecore.tkrefreshlayout.RefreshListenerAdapter;
-import com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout;
+import com.trello.rxlifecycle.components.support.RxAppCompatActivity;
 
 import auboo.soft.smallrest.databinding.ActivityMainBinding;
-import me.drakeet.multitype.Items;
-import me.drakeet.multitype.MultiTypeAdapter;
+import auboo.soft.smallrest.ui.bbs.fragment.BbsFragment;
+import auboo.soft.smallrest.ui.find.fragment.FindFragment;
+import auboo.soft.smallrest.ui.me.fragment.MeFragment;
+import auboo.soft.smallrest.ui.store.fragment.StoreFragment;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends RxAppCompatActivity {
 
-    private Items mItems;
-    private MultiTypeAdapter mMultiAdapter;
+    public static final int TAB_FIND = 1;
+    public static final int TAB_STORE = 2;
+    public static final int TAB_BBS = 3;
+    public static final int TAB_ME = 4;
+
     private ActivityMainBinding mainBinding;
-    private int mCurCount = 30;
-    private int countPage = 1;
+    private Fragment mFindFragment;
+    private Fragment mStoreFragment;
+    private Fragment mBbsFragment;
+    private Fragment mMeFragment;
+
+    //用于对Fragment进行管理
+    private FragmentManager mFragmentManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
 
-        initView();
-        initData();
+        mFragmentManager = getSupportFragmentManager();
+        if (savedInstanceState == null) {
+            setSelectTab(TAB_FIND);
+        }
         initEvent();
     }
 
     private void initEvent() {
-
-        mainBinding.tklRefresh.setOnRefreshListener(new RefreshListenerAdapter() {
-            @Override
-            public void onLoadMore(TwinklingRefreshLayout refreshLayout) {
-                super.onLoadMore(refreshLayout);
-
-                mainBinding.tklRefresh.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        mainBinding.tklRefresh.finishLoadmore();
-                        loadMore();
-                    }
-                }, 1000);
-            }
-        });
-
-
-        mainBinding.rvList.addOnScrollListener(new RecyclerView.OnScrollListener() {
-            @Override
-            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
-                super.onScrolled(recyclerView, dx, dy);
-
-                boolean isFlag = isSlideToBottom(mainBinding.rvList);
-                Toast.makeText(MainActivity.this, isFlag + "", Toast.LENGTH_SHORT).show();
+        mainBinding.rgMainRadio.setOnCheckedChangeListener((group, checkedId) -> {
+            switch (checkedId) {
+                case R.id.rb_find:
+                    setSelectTab(TAB_FIND);
+                    break;
+                case R.id.rb_store:
+                    setSelectTab(TAB_STORE);
+                    break;
+                case R.id.rb_bbs:
+                    setSelectTab(TAB_BBS);
+                    break;
+                case R.id.rb_me:
+                    setSelectTab(TAB_ME);
+                    break;
             }
         });
     }
 
 
     /**
-     * 判断是否滑动到底部
+     * 设置选中的Tab页
+     *
+     * @param index Tab页的索引
      */
-    public boolean isSlideToBottom(RecyclerView recyclerView) {
-        if (recyclerView == null) return false;
-        if (recyclerView.computeVerticalScrollExtent() + recyclerView.computeVerticalScrollOffset()
-                >= recyclerView.computeVerticalScrollRange())
-            return true;
-        Log.i("mainActivity", "computeVerticalScrollExtent=" + mainBinding.rvList.computeVerticalScrollExtent() + "---->"
-                + "computeVerticalScrollOffset=" + mainBinding.rvList.computeVerticalScrollOffset());
-        return false;
+    private void setSelectTab(int index) {
+//        if (index == TAB_MINE) {
+//            if (!ActivitySkipUtils.getInstance().checkIsLogin(this)) {
+//                return;
+//            }
+//        }
+
+        // 开启一个Fragment事务
+        FragmentTransaction transaction = mFragmentManager.beginTransaction();
+        // 先隐藏掉所有的Fragment，以防止有多个Fragment显示在界面上的情况
+        hideFragments(transaction);
+        switch (index) {
+            case TAB_FIND:
+                if (null == mFindFragment) {
+                    // 如果为空，则创建一个并添加到界面上
+                    mFindFragment = new FindFragment();
+                    transaction.add(R.id.flyt_read, mFindFragment);
+                } else {
+                    // 如果不为空，则直接将它显示出来
+                    transaction.show(mFindFragment);
+                }
+                break;
+            case TAB_STORE:
+                if (null == mStoreFragment) {
+                    mStoreFragment = new StoreFragment();
+                    transaction.add(R.id.flyt_read, mStoreFragment);
+                } else {
+                    transaction.show(mStoreFragment);
+                }
+                break;
+            case TAB_BBS:
+                if (null == mBbsFragment) {
+                    mBbsFragment = new BbsFragment();
+                    transaction.add(R.id.flyt_read, mBbsFragment);
+                } else {
+                    transaction.show(mBbsFragment);
+                }
+                break;
+            case TAB_ME:
+                if (null == mMeFragment) {
+                    mMeFragment = new MeFragment();
+                    transaction.add(R.id.flyt_read, mMeFragment);
+                } else {
+                    transaction.show(mMeFragment);
+                }
+                break;
+            default:
+                break;
+        }
+        transaction.commit();
     }
 
-    private void initView() {
-        mItems = new Items();
-        mMultiAdapter = new MultiTypeAdapter(mItems);
-        mMultiAdapter.register(ItemMainBean.class, new ItemMainHolder(this));
-        mMultiAdapter.register(String.class, new ItemNoMoreHolder());
-        mainBinding.rvList.setLayoutManager(new LinearLayoutManager(this));
-        mainBinding.rvList.setHasFixedSize(true);
-        mainBinding.rvList.setAdapter(mMultiAdapter);
 
-        mainBinding.tklRefresh.setAutoLoadMore(true);
-        mainBinding.tklRefresh.setEnableLoadmore(true);
-        mainBinding.tklRefresh.setEnableRefresh(false);
-        mainBinding.tklRefresh.setEnableOverScroll(false);
-        mainBinding.tklRefresh.setBottomView(new BaiduBottomView(this));
-        mainBinding.tklRefresh.setBottomHeight(44);
-    }
-
-    private void initData() {
-        for (int i = 0; i < 30; i++) {
-            mItems.add(new ItemMainBean("哈哈哈哈哈" + i));
+    /**
+     * 将所有Tab页的Fragment都置为隐藏状态。
+     *
+     * @param transaction 用于对Fragment执行操作的事务
+     */
+    private void hideFragments(FragmentTransaction transaction) {
+        try {
+            if (null != mFindFragment) {
+                transaction.hide(mFindFragment);
+            }
+            if (null != mStoreFragment) {
+                transaction.hide(mStoreFragment);
+            }
+            if (null != mBbsFragment) {
+                transaction.hide(mBbsFragment);
+            }
+            if (null != mMeFragment) {
+                transaction.hide(mMeFragment);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        mMultiAdapter.notifyDataSetChanged();
-    }
-
-    private void loadMore() {
-        if (countPage >= 5) {
-            mainBinding.tklRefresh.setEnableLoadmore(false);
-            mItems.add("");
-            mMultiAdapter.notifyDataSetChanged();
-            return;
-        }
-
-        for (int i = 0; i < 10; i++) {
-            mItems.add(new ItemMainBean("哈哈哈" + (mCurCount + i)));
-        }
-        mCurCount += 10;
-        countPage++;
-        mMultiAdapter.notifyDataSetChanged();
     }
 }

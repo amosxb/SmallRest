@@ -8,16 +8,53 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout
-            android:id="@+id/tkl_refresh"
+        <FrameLayout
+            android:id="@+id/flyt_read"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="0dp"
+            android:layout_weight="1" />
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_main_bottom_layout_bg">
 
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/rv_list"
+            <RadioGroup
+                android:id="@+id/rg_main_radio"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-        </com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout>
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="6dp">
+
+
+                <RadioButton
+                    android:id="@+id/rb_find"
+                    style="@style/app_style_radio"
+                    android:checked="true"
+                    android:drawableTop="@drawable/app_selector_main_find"
+                    android:text="@string/main_find"
+                    android:textColor="@drawable/app_selector_text_color" />
+
+
+                <RadioButton
+                    android:id="@+id/rb_store"
+                    style="@style/app_style_radio"
+                    android:drawableTop="@drawable/app_selector_main_store"
+                    android:text="@string/main_store" />
+
+
+                <RadioButton
+                    android:id="@+id/rb_bbs"
+                    style="@style/app_style_radio"
+                    android:drawableTop="@drawable/app_selector_main_bbs"
+                    android:text="@string/main_bbs" />
+
+                <RadioButton
+                    android:id="@+id/rb_me"
+                    style="@style/app_style_radio"
+                    android:drawableTop="@drawable/app_selector_main_me"
+                    android:text="@string/main_me" />
+            </RadioGroup>
+        </RelativeLayout>
     </LinearLayout>
 </layout>
