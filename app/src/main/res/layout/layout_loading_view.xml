@@ -31,7 +31,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:text="@string/loading_text"
-            android:textColor="@color/loading_text_color"
+            android:textColor="@color/common_loading_text_color"
             android:textSize="14sp" />
     </LinearLayout>
 </RelativeLayout>

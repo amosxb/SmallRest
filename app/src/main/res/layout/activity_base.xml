@@ -11,18 +11,24 @@
             android:id="@+id/tool_bar"
             layout="@layout/tool_bar" />
 
+        <!--toolbar 底部线条,设置id，可以控制view显示和隐藏-->
+        <View
+            android:id="@+id/v_top_line"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/common_line_color" />
 
         <RelativeLayout
             android:id="@+id/container"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:background="@color/common_background_color">
 
             <!--加载失败-->
             <LinearLayout
                 android:id="@+id/ll_error_refresh"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/error_layout_bg"
                 android:gravity="center_horizontal"
                 android:orientation="vertical"
                 android:visibility="gone">
@@ -43,7 +49,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
                     android:text="@string/loading_error"
-                    android:textColor="@color/loading_text_color"
+                    android:textColor="@color/common_loading_text_color"
                     android:textSize="15sp" />
             </LinearLayout>
 

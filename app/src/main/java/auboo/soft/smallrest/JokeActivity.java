@@ -30,9 +30,4 @@ public class JokeActivity extends BaseCommonActivity<ActivityJokeBinding> {
     protected String setTitle() {
         return getResources().getString(R.string.joke_tool_bar_title);
     }
-
-    @Override
-    protected void initEvent() {
-
-    }
 }

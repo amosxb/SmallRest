@@ -34,11 +34,6 @@ public abstract class BaseCommonActivity<SV extends ViewDataBinding> extends RxA
     private View mLoadingView;
     private AnimationDrawable mAnimationDrawable;
 
-    @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        initEvent();
-    }
 
     @Override
     public void setContentView(@LayoutRes int layoutResID) {
@@ -53,14 +48,6 @@ public abstract class BaseCommonActivity<SV extends ViewDataBinding> extends RxA
         mContainer.addView(bindingView.getRoot());
         getWindow().setContentView(mBaseBinding.getRoot());
 
-        mLoadingView = ((ViewStub) this.findViewById(R.id.vs_loading)).inflate();
-        ImageView iv = mLoadingView.findViewById(R.id.img_progress);
-
-        //加载动画
-        mAnimationDrawable = (AnimationDrawable) iv.getDrawable();
-        if (!mAnimationDrawable.isRunning()) {
-            mAnimationDrawable.start();
-        }
         //设置toolbar
         setToolBar();
         //加载失败布局点击刷新
@@ -83,58 +70,63 @@ public abstract class BaseCommonActivity<SV extends ViewDataBinding> extends RxA
             actionBar.setHomeAsUpIndicator(R.drawable.ic_appbar_back);
         }
         mBaseBinding.toolBar.tvToolBarTitle.setText(setTitle());
-        mBaseBinding.toolBar.toolBar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onBackPressed();
-            }
-        });
+        mBaseBinding.toolBar.toolBar.setNavigationOnClickListener(v -> onBackPressed());
     }
 
     protected void showLoading() {
-        if (mLoadingView != null && mLoadingView.getVisibility() != View.VISIBLE) {
+        mLoadingView = ((ViewStub) this.findViewById(R.id.vs_loading)).inflate();
+        ImageView iv = mLoadingView.findViewById(R.id.img_progress);
+
+        if (mLoadingView != null && !mLoadingView.isShown()) {
             mLoadingView.setVisibility(View.VISIBLE);
         }
         // 开始动画
-        if (!mAnimationDrawable.isRunning()) {
-            mAnimationDrawable.start();
+        mAnimationDrawable = (AnimationDrawable) iv.getDrawable();
+        if (mAnimationDrawable != null) {
+            if (!mAnimationDrawable.isRunning()) {
+                mAnimationDrawable.start();
+            }
         }
-        if (bindingView.getRoot().getVisibility() != View.GONE) {
+        if (bindingView.getRoot().isShown()) {
             bindingView.getRoot().setVisibility(View.GONE);
         }
-        if (mBaseBinding.llErrorRefresh.getVisibility() != View.GONE) {
+        if (mBaseBinding.llErrorRefresh.isShown()) {
             mBaseBinding.llErrorRefresh.setVisibility(View.GONE);
         }
     }
 
     protected void showContentView() {
-        if (mLoadingView != null && mLoadingView.getVisibility() != View.GONE) {
+        if (mLoadingView != null && mLoadingView.isShown()) {
             mLoadingView.setVisibility(View.GONE);
         }
         // 停止动画
-        if (mAnimationDrawable.isRunning()) {
-            mAnimationDrawable.stop();
+        if (mAnimationDrawable != null) {
+            if (mAnimationDrawable.isRunning()) {
+                mAnimationDrawable.stop();
+            }
         }
-        if (mBaseBinding.llErrorRefresh.getVisibility() != View.GONE) {
+        if (mBaseBinding.llErrorRefresh.isShown()) {
             mBaseBinding.llErrorRefresh.setVisibility(View.GONE);
         }
-        if (bindingView.getRoot().getVisibility() != View.VISIBLE) {
+        if (!bindingView.getRoot().isShown()) {
             bindingView.getRoot().setVisibility(View.VISIBLE);
         }
     }
 
     protected void showError() {
-        if (mLoadingView != null && mLoadingView.getVisibility() != View.GONE) {
+        if (mLoadingView != null && mLoadingView.isShown()) {
             mLoadingView.setVisibility(View.GONE);
         }
         // 停止动画
-        if (mAnimationDrawable.isRunning()) {
-            mAnimationDrawable.stop();
+        if (mAnimationDrawable != null) {
+            if (mAnimationDrawable.isRunning()) {
+                mAnimationDrawable.stop();
+            }
         }
-        if (mBaseBinding.llErrorRefresh.getVisibility() != View.VISIBLE) {
+        if (!mBaseBinding.llErrorRefresh.isShown()) {
             mBaseBinding.llErrorRefresh.setVisibility(View.VISIBLE);
         }
-        if (bindingView.getRoot().getVisibility() != View.GONE) {
+        if (bindingView.getRoot().isShown()) {
             bindingView.getRoot().setVisibility(View.GONE);
         }
     }
@@ -142,12 +134,6 @@ public abstract class BaseCommonActivity<SV extends ViewDataBinding> extends RxA
     protected void onRefresh() {
 
     }
-
-
-    /**
-     * 设置事件监听
-     */
-    protected abstract void initEvent();
 
     /**
      * 设置标题
