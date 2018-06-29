@@ -1,10 +1,9 @@
-package auboo.soft.smallrest;
+package auboo.soft.smallrest.ui.me.activity;
 
 import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
-import android.support.annotation.Nullable;
 
+import auboo.soft.smallrest.R;
 import auboo.soft.smallrest.base.BaseCommonActivity;
 import auboo.soft.smallrest.databinding.ActivityJokeBinding;
 
@@ -20,14 +19,22 @@ public class JokeActivity extends BaseCommonActivity<ActivityJokeBinding> {
     }
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_joke);
+    protected String setTitle() {
+        return "笑话大全";
+    }
+
+    @Override
+    protected int getResId() {
+        return R.layout.activity_joke;
+    }
+
+    @Override
+    protected void initEvent() {
 
     }
 
     @Override
-    protected String setTitle() {
-        return getResources().getString(R.string.joke_tool_bar_title);
+    protected void initView() {
+
     }
 }

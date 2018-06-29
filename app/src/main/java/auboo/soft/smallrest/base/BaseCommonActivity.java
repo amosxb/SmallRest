@@ -4,7 +4,6 @@ import android.databinding.DataBindingUtil;
 import android.databinding.ViewDataBinding;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
-import android.renderscript.ScriptIntrinsicYuvToRGB;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
@@ -34,6 +33,13 @@ public abstract class BaseCommonActivity<SV extends ViewDataBinding> extends RxA
     private View mLoadingView;
     private AnimationDrawable mAnimationDrawable;
 
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(getResId());
+        initView();
+        initEvent();
+    }
 
     @Override
     public void setContentView(@LayoutRes int layoutResID) {
@@ -57,7 +63,6 @@ public abstract class BaseCommonActivity<SV extends ViewDataBinding> extends RxA
         });
         // 设置透明状态栏，兼容4.4
         StatusBarUtil.setColor(this, ContextCompat.getColor(this, R.color.colorTheme), 0);
-        bindingView.getRoot().setVisibility(View.GONE);
     }
 
     protected void setToolBar() {
@@ -130,13 +135,16 @@ public abstract class BaseCommonActivity<SV extends ViewDataBinding> extends RxA
             bindingView.getRoot().setVisibility(View.GONE);
         }
     }
-
+    
     protected void onRefresh() {
 
     }
 
-    /**
-     * 设置标题
-     */
     protected abstract String setTitle();
+
+    protected abstract int getResId();
+
+    protected abstract void initEvent();
+
+    protected abstract void initView();
 }

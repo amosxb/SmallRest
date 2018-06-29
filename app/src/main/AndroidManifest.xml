@@ -16,12 +16,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".TwoActivity" />
+        <activity
+            android:name=".TwoActivity"
+            android:screenOrientation="portrait" />
+        <!--设置界面-->
+        <activity
+            android:name=".ui.me.activity.SettingActivity"
+            android:screenOrientation="portrait" />
         <!--笑话大全-->
         <activity
-            android:name=".JokeActivity"
+            android:name=".ui.me.activity.JokeActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".ui.me.activity.SettingActivity" />
     </application>
 
 </manifest>

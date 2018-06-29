@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import auboo.soft.smallrest.databinding.ItemMainViewBinding;
+import auboo.soft.smallrest.ui.me.activity.JokeActivity;
 import me.drakeet.multitype.ItemViewBinder;
 
 /**

@@ -10,10 +10,10 @@ public interface IView {
     /**
      * 显示正在加载布局
      */
-    void showLoading();
+    void showLoadingView();
 
     /**
      * 隐藏正在加载布局
      */
-    void cancelLoading();
+    void cancelLoadingView();
 }
