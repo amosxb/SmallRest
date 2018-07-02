@@ -3,8 +3,11 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/SmallRest.iml" filepath="$PROJECT_DIR$/SmallRest.iml" />
+      <module fileurl="file://C:\Users\shenrunzhou\Desktop\githubTest\SmallRest\SmallRest.iml" filepath="C:\Users\shenrunzhou\Desktop\githubTest\SmallRest\SmallRest.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://C:\Users\shenrunzhou\Desktop\githubTest\SmallRest\app\app.iml" filepath="C:\Users\shenrunzhou\Desktop\githubTest\SmallRest\app\app.iml" />
       <module fileurl="file://$PROJECT_DIR$/http/http.iml" filepath="$PROJECT_DIR$/http/http.iml" />
+      <module fileurl="file://C:\Users\shenrunzhou\Desktop\githubTest\SmallRest\http\http.iml" filepath="C:\Users\shenrunzhou\Desktop\githubTest\SmallRest\http\http.iml" />
     </modules>
   </component>
 </project>
