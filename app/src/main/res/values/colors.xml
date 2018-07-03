@@ -12,13 +12,27 @@
     <color name="common_line_color">#eff0f2</color>
     <color name="common_background_color">#f1f2f4</color>
     <color name="common_loading_text_color">#999999</color>
-    <color name="common_white">@android:color/white</color>
+    <color name="common_white">#ffffff</color>
+    <!--页面背景的颜色-->
+    <color name="common_page_bg">#F1F3F4</color>
 
     <color name="common_text_color_000000">#000000</color>
     <color name="common_text_color_333333">#333333</color>
     <color name="common_text_color_666666">#666666</color>
     <color name="common_text_color_999999">#999999</color>
+    <!--正文文字颜色-->
+    <color name="common_color_content">#ff333333</color>
+    <!--分割线-->
+    <color name="common_color_line">#EBEBEB</color>
 
     <!--tab标签栏文字的颜色-->
     <color name="colorTabText">#585858</color>
+
+
+    <!--水波纹或5.0以下选择器颜色-->
+    <color name="tabBackground">#777D7D7D</color>
+    <!--item的水波纹颜色-->
+    <color name="itemBackground">#DD7D7D7D</color>
+    <!--item的5.0一下版本选择器颜色-->
+    <color name="itemLowBackground">#d9d9d9</color>
 </resources>

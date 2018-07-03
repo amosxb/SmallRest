@@ -8,12 +8,17 @@ package auboo.soft.smallrest.iview;
 public interface IView {
 
     /**
-     * 显示正在加载布局
+     * 开始请求，显示正在加载布局回调
      */
-    void showLoadingView();
+    void loadingView();
 
     /**
-     * 隐藏正在加载布局
+     * 显示请求成功后回调
      */
-    void cancelLoadingView();
+    void loadSuccessView();
+
+    /**
+     * 加载失败回调
+     */
+    void loadingFailure();
 }

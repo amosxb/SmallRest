@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.text.TextUtils;
+import android.util.Log;
 
 import com.example.http.utils.CheckNetwork;
 import com.google.gson.FieldNamingPolicy;
@@ -40,6 +41,8 @@ import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
+
+import static android.content.ContentValues.TAG;
 
 /**
  * Created by jingbin on 2017/2/14.
@@ -217,12 +220,12 @@ public class HttpUtils {
         }
     }
 
-    private HttpLoggingInterceptor getInterceptor() {
-        HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
+    private HttpLoggingInterceptorM getInterceptor() {
+        HttpLoggingInterceptorM interceptor = new HttpLoggingInterceptorM(new LogInterceptor());
         if (debug) {
-            interceptor.setLevel(HttpLoggingInterceptor.Level.BODY); // 测试
+            interceptor.setLevel(HttpLoggingInterceptorM.Level.BODY); // 测试
         } else {
-            interceptor.setLevel(HttpLoggingInterceptor.Level.NONE); // 打包
+            interceptor.setLevel(HttpLoggingInterceptorM.Level.NONE); // 打包
         }
         return interceptor;
     }

@@ -42,14 +42,16 @@ public class BuildFactory {
 
         switch (type) {
             case API_GANKIO:
-                if (gankHttps == null) {
-                    synchronized (BuildFactory.class) {
-                        if (gankHttps == null) {
-                            gankHttps = HttpUtils.getInstance().getBuilder(type).build().create(a);
-                        }
-                    }
-                }
-                return (T) gankHttps;
+//                if (gankHttps == null) {
+//                    synchronized (BuildFactory.class) {
+//                        if (gankHttps == null) {
+//                            gankHttps = HttpUtils.getInstance().getBuilder(type).build().create(a);
+//                        }
+//                    }
+//                }
+//                return (T) gankHttps;
+                T t = HttpUtils.getInstance().getBuilder(type).build().create(a);
+                return t;
             case API_DOUBAN:
                 if (doubanHttps == null) {
                     synchronized (BuildFactory.class) {

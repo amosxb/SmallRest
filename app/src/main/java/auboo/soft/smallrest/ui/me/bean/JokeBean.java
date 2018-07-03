@@ -1,5 +1,6 @@
 package auboo.soft.smallrest.ui.me.bean;
 
+
 import java.util.List;
 
 /**
@@ -62,7 +63,6 @@ public class JokeBean {
              * unixtime : 1530251700
              * updatetime : 2018-06-29 13:55:00
              */
-
             private String content;
             private String hashId;
             private int unixtime;

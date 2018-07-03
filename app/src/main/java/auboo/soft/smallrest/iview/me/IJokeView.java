@@ -13,5 +13,7 @@ public interface IJokeView extends IView {
     /**
      * 接口返回数据
      * */
-    void refreshAdapter(JokeBean jokeBean);
+    void refreshAdapter(JokeBean.ResultBean resultBean);
+
+    void loadingFailure(String msg);
 }

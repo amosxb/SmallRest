@@ -15,6 +15,8 @@ android {
         versionName configInfo.versionName
         //1.设置混合DEX
         multiDexEnabled true
+        renderscriptTargetApi 19
+        renderscriptSupportModeEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -31,14 +33,19 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
+    packagingOptions {
+        exclude 'META-INF/rxjava.properties'
+    }
 }
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    androidTestImplementation dependenciesLib.test
-    androidTestImplementation dependenciesLib.testespresso
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile project(':http')
     api dependenciesLib.jnit
-    api dependenciesLib.supportV7
     api dependenciesLib.design
     api dependenciesLib.recyclerView
     api dependenciesLib.cardView

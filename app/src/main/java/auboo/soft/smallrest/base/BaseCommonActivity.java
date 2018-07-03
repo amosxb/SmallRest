@@ -28,7 +28,7 @@ import auboo.soft.smallrest.databinding.ActivityBaseBinding;
 
 public abstract class BaseCommonActivity<SV extends ViewDataBinding> extends RxAppCompatActivity {
 
-    private SV bindingView;
+    protected SV bindingView;
     private ActivityBaseBinding mBaseBinding;
     private View mLoadingView;
     private AnimationDrawable mAnimationDrawable;
@@ -58,7 +58,6 @@ public abstract class BaseCommonActivity<SV extends ViewDataBinding> extends RxA
         setToolBar();
         //加载失败布局点击刷新
         mBaseBinding.llErrorRefresh.setOnClickListener(v -> {
-            showLoading();
             onRefresh();
         });
         // 设置透明状态栏，兼容4.4
@@ -135,7 +134,27 @@ public abstract class BaseCommonActivity<SV extends ViewDataBinding> extends RxA
             bindingView.getRoot().setVisibility(View.GONE);
         }
     }
-    
+
+    protected void showErrorMsg(String msg) {
+        if (mLoadingView != null && mLoadingView.isShown()) {
+            mLoadingView.setVisibility(View.GONE);
+        }
+        // 停止动画
+        if (mAnimationDrawable != null) {
+            if (mAnimationDrawable.isRunning()) {
+                mAnimationDrawable.stop();
+            }
+        }
+        if (!mBaseBinding.llErrorRefresh.isShown()) {
+            mBaseBinding.llErrorRefresh.setVisibility(View.VISIBLE);
+        }
+        //设置显示问题信息
+        mBaseBinding.tvError.setText(msg);
+        if (bindingView.getRoot().isShown()) {
+            bindingView.getRoot().setVisibility(View.GONE);
+        }
+    }
+
     protected void onRefresh() {
 
     }

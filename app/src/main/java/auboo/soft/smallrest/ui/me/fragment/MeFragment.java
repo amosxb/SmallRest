@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import auboo.soft.smallrest.R;
+import auboo.soft.smallrest.ui.me.activity.JokeActivity;
 import auboo.soft.smallrest.ui.me.activity.SettingActivity;
 
 /**
@@ -23,7 +24,7 @@ public class MeFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_me, container, false);
         view.setOnClickListener(v -> {
-            SettingActivity.start(getActivity());
+            JokeActivity.start(getContext());
         });
         return view;
     }

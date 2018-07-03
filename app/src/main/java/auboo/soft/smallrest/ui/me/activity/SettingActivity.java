@@ -25,7 +25,7 @@ public class SettingActivity extends BaseCommonActivity<ActivitySettingBinding> 
 
     @Override
     protected int getResId() {
-        return R.layout.activity_setting;
+        return -1;
     }
 
     @Override
