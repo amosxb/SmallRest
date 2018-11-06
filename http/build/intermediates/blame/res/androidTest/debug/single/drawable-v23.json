@@ -2,5 +2,9 @@
     {
         "merged": "D:\\otherProject\\SmallRest\\http\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-v23\\abc_control_background_material.xml",
         "source": "C:\\Users\\xiaobin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\1d2544894ddf8002a42d3426fea15203\\res\\drawable-v23\\abc_control_background_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\shenrunzhou\\Desktop\\githubTest\\SmallRest\\http\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-v23\\abc_control_background_material.xml",
+        "source": "C:\\Users\\shenrunzhou\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\ad38a8e0f54f3b7e6446b386032c9b3b\\res\\drawable-v23\\abc_control_background_material.xml"
     }
 ]

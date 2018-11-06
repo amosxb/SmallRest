@@ -14,5 +14,21 @@
     {
         "merged": "D:\\otherProject\\SmallRest\\http\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout-v21\\notification_template_icon_group.xml",
         "source": "C:\\Users\\xiaobin\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\de584d901324b305839d6690ad5a5440\\res\\layout-v21\\notification_template_icon_group.xml"
+    },
+    {
+        "merged": "C:\\Users\\shenrunzhou\\Desktop\\githubTest\\SmallRest\\http\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout-v21\\notification_template_custom_big.xml",
+        "source": "C:\\Users\\shenrunzhou\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\11c0eb8bcf5241cd62ff3c7eca1d4aa8\\res\\layout-v21\\notification_template_custom_big.xml"
+    },
+    {
+        "merged": "C:\\Users\\shenrunzhou\\Desktop\\githubTest\\SmallRest\\http\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout-v21\\notification_action_tombstone.xml",
+        "source": "C:\\Users\\shenrunzhou\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\11c0eb8bcf5241cd62ff3c7eca1d4aa8\\res\\layout-v21\\notification_action_tombstone.xml"
+    },
+    {
+        "merged": "C:\\Users\\shenrunzhou\\Desktop\\githubTest\\SmallRest\\http\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout-v21\\notification_template_icon_group.xml",
+        "source": "C:\\Users\\shenrunzhou\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\11c0eb8bcf5241cd62ff3c7eca1d4aa8\\res\\layout-v21\\notification_template_icon_group.xml"
+    },
+    {
+        "merged": "C:\\Users\\shenrunzhou\\Desktop\\githubTest\\SmallRest\\http\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout-v21\\notification_action.xml",
+        "source": "C:\\Users\\shenrunzhou\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\11c0eb8bcf5241cd62ff3c7eca1d4aa8\\res\\layout-v21\\notification_action.xml"
     }
 ]

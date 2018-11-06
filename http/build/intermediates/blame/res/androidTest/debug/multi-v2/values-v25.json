@@ -1,10 +1,42 @@
 {
     "logs": [
         {
+            "outputFile": "C:\\Users\\shenrunzhou\\Desktop\\githubTest\\SmallRest\\http\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-v25\\values-v25.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\shenrunzhou\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\ad38a8e0f54f3b7e6446b386032c9b3b\\res\\values-v25\\values-v25.xml",
+                    "from": {
+                        "startLines": "2,3,4,6",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,126,209,308",
+                        "endLines": "2,3,5,7",
+                        "endColumns": "70,82,12,12",
+                        "endOffsets": "121,204,303,414"
+                    }
+                }
+            ]
+        },
+        {
             "outputFile": "D:\\otherProject\\SmallRest\\http\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-v25\\values-v25.xml",
             "map": [
                 {
                     "source": "C:\\Users\\xiaobin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\1d2544894ddf8002a42d3426fea15203\\res\\values-v25\\values-v25.xml",
+                    "from": {
+                        "startLines": "2,3,4,6",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,126,209,308",
+                        "endLines": "2,3,5,7",
+                        "endColumns": "70,82,12,12",
+                        "endOffsets": "121,204,303,414"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "C:\\Users\\shenrunzhou\\Desktop\\githubTest\\SmallRest\\http\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-v25\\values-v25.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\shenrunzhou\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\ad38a8e0f54f3b7e6446b386032c9b3b\\res\\values-v25\\values-v25.xml",
                     "from": {
                         "startLines": "2,3,4,6",
                         "startColumns": "4,4,4,4",
